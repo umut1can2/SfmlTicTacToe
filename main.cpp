@@ -54,197 +54,139 @@ void resetColor(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text 
 	eig.setColor( Color::Black );
 	nine.setColor( Color::Black );
 }
+
+void greenColor(Text &f, Text &s, Text &t){
+	f.setColor( Color::Green );
+	s.setColor( Color::Green );
+	t.setColor( Color::Green );
+}
+
+void redColor(Text &colorCh1,Text &colorCh2,Text &colorCh3,Text &colorCh4,Text &colorCh5,Text &colorCh6){
+	colorCh1.setColor( Color::Red );
+	colorCh2.setColor( Color::Red );
+	colorCh3.setColor( Color::Red );
+	colorCh4.setColor( Color::Red );
+	colorCh5.setColor( Color::Red );
+	colorCh6.setColor( Color::Red );
+}
+
 void win(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,Text &six,Text &sev,Text &eig,Text &nine){
     /* FOR X */
     //X's Side
     if(c1 == 'X' && c2 == 'X' && c3 == 'X'){
     	cout << "Win X\n";
 
-      one.setColor( Color::Green );
-      two.setColor( Color::Green );
-      thr.setColor( Color::Green );
+      	greenColor(one,two,thr);
 
-      four.setColor( Color::Red );
-      five.setColor( Color::Red );
-      six.setColor( Color::Red );
-      sev.setColor( Color::Red );
-      eig.setColor( Color::Red );
-      nine.setColor( Color::Red );
+      	redColor(four,five,six,sev,eig,nine);
 
-      update(app,one,two,thr,four,five,six,sev,eig,nine);
-      realWin = true;
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+      	realWin = true;
     }
     if(c4 == 'X' && c5 == 'X' && c6 == 'X'){
     	cout << "Win X\n";
 
-      four.setColor( Color::Green );
-      five.setColor( Color::Green );
-      six.setColor( Color::Green );
+      	greenColor(four,five,six);
 
-      one.setColor( Color::Red );
-      two.setColor( Color::Red );
-      thr.setColor( Color::Red );
-      sev.setColor( Color::Red );
-      eig.setColor( Color::Red );
-      nine.setColor( Color::Red );
+      	redColor(one,two,thr,sev,eig,nine);
 
-      update(app,one,two,thr,four,five,six,sev,eig,nine);
-      realWin = true;
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+      	realWin = true;
     }
     if(c7 == 'X' && c8 == 'X' && c9 == 'X'){
     	cout << "Win X\n";
 
-      sev.setColor( Color::Green );
-      eig.setColor( Color::Green );
-      nine.setColor( Color::Green );
+      	greenColor(sev,eig,nine);
 
-      one.setColor( Color::Red );
-      two.setColor( Color::Red );
-      thr.setColor( Color::Red );
-      four.setColor( Color::Red );
-      five.setColor( Color::Red );
-      six.setColor( Color::Red );
+      	redColor(one,two,thr,four,five,six);
 
-      update(app,one,two,thr,four,five,six,sev,eig,nine);
-      realWin = true;
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+      	realWin = true;
     }
     //X's Down
     if(c1 == 'X' && c4 == 'X' && c7 == 'X'){
     	cout << "Win X\n";
 
-      one.setColor( Color::Green );
-      four.setColor( Color::Green );
-      sev.setColor( Color::Green );
+     	greenColor(one,four,sev);
 
-      two.setColor( Color::Red );
-      thr.setColor( Color::Red );
-      five.setColor( Color::Red );
-      six.setColor( Color::Red );
-      eig.setColor( Color::Red );
-      nine.setColor( Color::Red );
+      	redColor(two,thr,five,six,eig,nine);
 
-      update(app,one,two,thr,four,five,six,sev,eig,nine);
-      realWin = true;
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+      	realWin = true;
     }
     if(c2 == 'X' && c5 == 'X' && c8 == 'X'){
     	cout << "Win X\n";
 
-      two.setColor( Color::Green );
-      five.setColor( Color::Green );
-      eig.setColor( Color::Green );
+      	greenColor(two,five,eig);
 
-      one.setColor( Color::Red );
-      thr.setColor( Color::Red );
-      four.setColor( Color::Red );
-      six.setColor( Color::Red );
-      sev.setColor( Color::Red );
-      nine.setColor( Color::Red );
 
-      update(app,one,two,thr,four,five,six,sev,eig,nine);
-      realWin = true;
+      	redColor(one,thr,four,six,sev,nine);
+
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+      	realWin = true;
     }
     if(c3 == 'X' && c6 == 'X' && c9 == 'X'){
     	cout << "Win X\n";
 
-      thr.setColor( Color::Green );
-      six.setColor( Color::Green );
-      nine.setColor( Color::Green );
+      	greenColor(thr,six,nine);
 
-      one.setColor( Color::Red );
-      two.setColor( Color::Red );
-      four.setColor( Color::Red );
-      five.setColor( Color::Red );
-      sev.setColor( Color::Red );
-      eig.setColor( Color::Red );
+      	redColor(one,two,four,five,sev,eig);
 
-      update(app,one,two,thr,four,five,six,sev,eig,nine);
-      realWin = true;
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+      	realWin = true;
     }
     //X's Cross
     if(c1 == 'X' && c5 == 'X' && c9 == 'X'){
     	cout << "Win X\n";
 
-      one.setColor( Color::Green );
-      five.setColor( Color::Green );
-      nine.setColor( Color::Green );
 
-      two.setColor( Color::Red );
-      thr.setColor( Color::Red );
-      four.setColor( Color::Red );
-      six.setColor( Color::Red );
-      sev.setColor( Color::Red );
-      eig.setColor( Color::Red );
+      	greenColor(one,five,nine);
 
-      update(app,one,two,thr,four,five,six,sev,eig,nine);
-      realWin = true;
-    }if(c3 == 'X' && c5 == 'X' && c7 == 'X'){
+      	redColor(two,thr,four,six,sev,eig);
+
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+      	realWin = true;
+    }
+    if(c3 == 'X' && c5 == 'X' && c7 == 'X'){
     	cout << "Win X\n";
 
-      thr.setColor( Color::Green );
-      five.setColor( Color::Green );
-      sev.setColor( Color::Green );
+      	greenColor(thr,five,sev);
 
-      one.setColor( Color::Red );
-      two.setColor( Color::Red );
-      four.setColor( Color::Red );
-      six.setColor( Color::Red );
-      eig.setColor( Color::Red );
-      nine.setColor( Color::Red );
+      	redColor(one,two,four,six,eig,nine);
 
-	update(app,one,two,thr,four,five,six,sev,eig,nine);
-	realWin = true;
+		update(app,one,two,thr,four,five,six,sev,eig,nine);
+		realWin = true;
     }
+
     /* FOR O */
 
-     //O's Side
+    //O's Side
     if(c1 == 'O' && c2 == 'O' && c3 == 'O'){
     	cout << "Win O\n";
+      
+      	greenColor(one,two,thr);
 
-      one.setColor( Color::Green );
-      two.setColor( Color::Green );
-      thr.setColor( Color::Green );
+      	redColor(four,five,six,sev,eig,nine);
 
-      four.setColor( Color::Red );
-      five.setColor( Color::Red );
-      six.setColor( Color::Red );
-      sev.setColor( Color::Red );
-      eig.setColor( Color::Red );
-      nine.setColor( Color::Red );
-
-      update(app,one,two,thr,four,five,six,sev,eig,nine);
-      realWin = true;
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+      	realWin = true;
     }
     if(c4 == 'O' && c5 == 'O' && c6 == 'O'){
     	cout << "Win O\n";
 
-      	four.setColor( Color::Green );
-      	five.setColor( Color::Green );
-      	six.setColor( Color::Green );
+      	greenColor(four,five,six);
 
-      	one.setColor( Color::Red );
-      	two.setColor( Color::Red );
-      	thr.setColor( Color::Red );
-      	sev.setColor( Color::Red );
-      	eig.setColor( Color::Red );
-      	nine.setColor( Color::Red );
+      	redColor(one,two,thr,sev,eig,nine);
 
       	update(app,one,two,thr,four,five,six,sev,eig,nine);
       	realWin = true;
     }
     if(c7 == 'O' && c8 == 'O' && c9 == 'O'){
-      cout << "Win O\n";
+      	cout << "Win O\n";
 
-      	sev.setColor( Color::Green );
-      	eig.setColor( Color::Green );
-      	nine.setColor( Color::Green );
+      	greenColor(sev,eig,nine);
 
-
-      	one.setColor( Color::Red );
-      	two.setColor( Color::Red );
-      	thr.setColor( Color::Red );
-      	four.setColor( Color::Red );
-      	five.setColor( Color::Red );
-      	six.setColor( Color::Red );
+      	redColor(one,two,thr,four,five,six);
 
       	update(app,one,two,thr,four,five,six,sev,eig,nine);
       	realWin = true;
@@ -253,16 +195,9 @@ void win(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,T
     if(c1 == 'O' && c4 == 'O' && c7 == 'O'){
         cout << "Win O\n";
 
-        one.setColor( Color::Green );
-        four.setColor( Color::Green );
-        sev.setColor( Color::Green );
+        greenColor(one,four,sev);
 
-        two.setColor( Color::Red );
-        thr.setColor( Color::Red );
-        five.setColor( Color::Red );
-        six.setColor( Color::Red );
-        eig.setColor( Color::Red );
-        nine.setColor( Color::Red );
+        redColor(two,thr,five,six,eig,nine);
 
         update(app,one,two,thr,four,five,six,sev,eig,nine);
         realWin = true;
@@ -270,16 +205,9 @@ void win(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,T
     if(c2 == 'O' && c5 == 'O' && c8 == 'O'){
         cout << "Win O\n";
 
-        two.setColor( Color::Green );
-        five.setColor( Color::Green );
-        eig.setColor( Color::Green );
+        greenColor(two,five,eig);
 
-        one.setColor( Color::Red );
-        thr.setColor( Color::Red );
-        four.setColor( Color::Red );
-        six.setColor( Color::Red );
-        sev.setColor( Color::Red );
-        nine.setColor( Color::Red );
+        redColor(one,thr,four,six,sev,nine);
 
         update(app,one,two,thr,four,five,six,sev,eig,nine);
         realWin = true;
@@ -287,16 +215,9 @@ void win(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,T
     if(c3 == 'O' && c6 == 'O' && c9 == 'O'){
         cout << "Win O\n";
 
-        thr.setColor( Color::Green );
-        six.setColor( Color::Green );
-        nine.setColor( Color::Green );
+        greenColor(thr,six,nine);
 
-        one.setColor( Color::Red );
-        two.setColor( Color::Red );
-        four.setColor( Color::Red );
-        five.setColor( Color::Red );
-        sev.setColor( Color::Red );
-        eig.setColor( Color::Red );
+        redColor(one,two,four,five,sev,eig);
 
         update(app,one,two,thr,four,five,six,sev,eig,nine);
         realWin = true;
@@ -305,32 +226,18 @@ void win(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,T
     if(c1 == 'O' && c5 == 'O' && c9 == 'O'){
         cout << "Win O\n";
 
-        one.setColor( Color::Green );
-        five.setColor( Color::Green );
-        nine.setColor( Color::Green );
+        greenColor(one,five,nine);
 
-        two.setColor( Color::Red );
-        thr.setColor( Color::Red );
-        four.setColor( Color::Red );
-        six.setColor( Color::Red );
-        sev.setColor( Color::Red );
-        eig.setColor( Color::Red );
+        redColor(two,thr,four,six,sev,eig);
 
         update(app,one,two,thr,four,five,six,sev,eig,nine);
         realWin = true;
     }if(c3 == 'O' && c5 == 'O' && c7 == 'O'){
         cout << "Win O\n";
 
-        thr.setColor( Color::Green );
-        five.setColor( Color::Green );
-        sev.setColor( Color::Green );
+        greenColor(thr,five,sev);
 
-        one.setColor( Color::Red );
-        two.setColor( Color::Red );
-        four.setColor( Color::Red );
-        six.setColor( Color::Red );
-        eig.setColor( Color::Red );
-        nine.setColor( Color::Red );
+        redColor(one,two,four,six,eig,nine);
 
         update(app,one,two,thr,four,five,six,sev,eig,nine);
         realWin = true;
@@ -432,8 +339,6 @@ int main(){
 						if (realWin == true)
 						{
 							return 0;
-						}else{
-							
 						}
 
 						if (ch == 'X')
@@ -458,8 +363,6 @@ int main(){
 						if (realWin == true)
 						{
 							return 0;
-						}else{
-							
 						}
 
 						if (ch == 'X')
@@ -484,8 +387,6 @@ int main(){
 						if (realWin == true)
 						{
 							return 0;
-						}else{
-							
 						}
 
             			if (ch == 'X')
@@ -510,8 +411,6 @@ int main(){
 						if (realWin == true)
 						{
 							return 0;
-						}else{
-							
 						}
 
 						if (ch == 'X')
@@ -536,8 +435,6 @@ int main(){
 						if (realWin == true)
 						{
 							return 0;
-						}else{
-							
 						}
 
 						if (ch == 'X')
@@ -562,8 +459,6 @@ int main(){
 						if (realWin == true)
 						{
 							return 0;
-						}else{
-							
 						}
 
 						if (ch == 'X')
@@ -588,8 +483,6 @@ int main(){
 						if (realWin == true)
 						{
 							return 0;
-						}else{
-							
 						}
 
 						if (ch == 'X')
@@ -615,8 +508,6 @@ int main(){
 						if (realWin == true)
 						{
 							return 0;
-						}else{
-							
 						}
 
 						if (ch == 'X')
@@ -641,8 +532,6 @@ int main(){
 						if (realWin == true)
 						{
 							return 0;
-						}else{
-						
 						}
 
 						if (ch == 'X')
@@ -700,15 +589,7 @@ int main(){
 		}
 		window.clear(Color::White);
 		window.draw(background);
-		window.draw(one);
-		window.draw(two);
-		window.draw(thr);
-		window.draw(four);
-		window.draw(five);
-		window.draw(six);
-		window.draw(sev);
-		window.draw(eig);
-		window.draw(nine);
+		update(window,one,two,thr,four,five,six,sev,eig,nine);
 		window.display();
 	}
 }
