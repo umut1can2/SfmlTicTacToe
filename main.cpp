@@ -31,6 +31,17 @@ bool bool8 = true;
 bool bool9 = true;
 
 bool realWin = false;
+
+void changePlayer(char x,Text &drawing){
+	if (x == 'O')
+	{
+		drawing.setString("O Oynuyor");
+	}else if (x == 'X')
+	{
+		drawing.setString("X Oynuyor");
+	}
+	
+}
 void update(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,Text &six,Text &sev,Text &eig,Text &nine){
 	app.draw(one);
     app.draw(two);
@@ -43,7 +54,8 @@ void update(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &fiv
 	app.draw(nine);
 }
 
-void resetColor(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,Text &six,Text &sev,Text &eig,Text &nine){
+void resetColor(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,Text &six,Text &sev,Text &eig,Text &nine)
+{
 	one.setColor( Color::Black );
 	two.setColor( Color::Black );
 	thr.setColor( Color::Black );
@@ -55,13 +67,15 @@ void resetColor(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text 
 	nine.setColor( Color::Black );
 }
 
-void greenColor(Text &f, Text &s, Text &t){
+void greenColor(Text &f, Text &s, Text &t)
+{
 	f.setColor( Color::Green );
 	s.setColor( Color::Green );
 	t.setColor( Color::Green );
 }
 
-void redColor(Text &colorCh1,Text &colorCh2,Text &colorCh3,Text &colorCh4,Text &colorCh5,Text &colorCh6){
+void redColor(Text &colorCh1,Text &colorCh2,Text &colorCh3,Text &colorCh4,Text &colorCh5,Text &colorCh6)
+{
 	colorCh1.setColor( Color::Red );
 	colorCh2.setColor( Color::Red );
 	colorCh3.setColor( Color::Red );
@@ -70,7 +84,8 @@ void redColor(Text &colorCh1,Text &colorCh2,Text &colorCh3,Text &colorCh4,Text &
 	colorCh6.setColor( Color::Red );
 }
 
-void win(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,Text &six,Text &sev,Text &eig,Text &nine){
+void win(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,Text &six,Text &sev,Text &eig,Text &nine)
+{
     /* FOR X */
     //X's Side
     if(c1 == 'X' && c2 == 'X' && c3 == 'X'){
@@ -245,8 +260,280 @@ void win(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,T
 
 
 }
+
+void tips(RenderWindow &app,Text &one,Text &two,Text &thr,Text &four,Text &five,Text &six,Text &sev,Text &eig,Text &nine)
+{
+	//Side 1 - X X
+    if(c2 == 'X' && c3 == 'X' && c1 != 'O' && ch == 'X'){
+      	one.setColor( Color::Magenta );
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 2 X - X
+    if(c1 == 'X' && c3 == 'X' && c2 != 'O' && ch == 'X'){
+      	two.setColor( Color::Magenta );
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 3 X X -
+    if(c1 == 'X' && c2 == 'X' && c3 != 'O' && ch == 'X'){
+      	thr.setColor( Color::Magenta );
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+
+    //Side 4 - X X
+    if(c5 == 'X' && c6 == 'X' && c4 != 'O' && ch == 'X'){
+    	four.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 5 X - X
+    if(c4 == 'X' && c6 == 'X' && c5 != 'O' && ch == 'X'){
+    	five.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 6 X X -
+    if(c4 == 'X' && c5 == 'X' && c6 != 'O' && ch == 'X'){
+    	six.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+    //Side 7 - X X
+    if(c8 == 'X' && c9 == 'X' && c7 != 'O' && ch == 'X'){
+    	sev.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 8 X - X
+    if(c7 == 'X' && c9 == 'X' && c8 != 'O' && ch == 'X'){
+    	eig.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 9 X X -
+    if(c7 == 'X' && c8 == 'X' && c9 != 'O' && ch == 'X'){
+    	nine.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+
+    //Down1 U- IX IX
+    if(c4 == 'X' && c7 == 'X' && c1 != 'O' && ch == 'X'){
+        one.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down1 UX I- IX
+    if(c1 == 'X' && c7 == 'X' && c4 != 'O' && ch == 'X'){
+        four.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down1 U- IX IX
+    if(c1 == 'X' && c4 == 'X' && c7 != 'O' && ch == 'X'){
+        sev.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+
+    //Down2 U- IX IX
+    if(c5 == 'X' && c8 == 'X' && c2 != 'O' && ch == 'X'){
+        two.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down2 UX I- IX
+    if(c2 == 'X' && c8 == 'X' && c5 != 'O' && ch == 'X'){
+        five.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down2 UX IX I-
+    if(c2 == 'X' && c5 == 'X' && c8 != 'O' && ch == 'X'){
+        eig.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+    //Down3 U- IX IX
+    if(c6 == 'X' && c9 == 'X' && c3 != 'O' && ch == 'X'){
+        thr.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down3 UX I- IX
+    if(c3 == 'X' && c9 == 'X' && c6 != 'O' && ch == 'X'){
+        six.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down3 UX IX I-
+    if(c3 == 'X' && c6 == 'X' && c9 != 'O' && ch == 'X'){
+        nine.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+
+
+    //Cross1 I- IX IX
+    if(c5 == 'X' && c9 == 'X' && c1 != 'O' && ch == 'X'){
+    	one.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Cross1 IX I- IX
+    if(c1 == 'X' && c9 == 'X' && c5 != 'O' && ch == 'X'){
+    	five.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Cross1 IX IX I-
+    if(c1 == 'X' && c5 == 'X' && c9 != 'O' && ch == 'X'){
+    	nine.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+    //Cross2 I- IX IX
+    if(c5 == 'X' && c7 == 'X' && c3 != 'O' && ch == 'X'){
+    	thr.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Cross2 IX I- IX
+    if(c3 == 'X' && c7 == 'X' && c5 != 'O' && ch == 'X'){
+    	five.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Cross2 IX IX I-
+    if(c3 == 'X' && c5 == 'X' && c7 != 'O' && ch == 'X'){
+    	sev.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+    /* TIPS FOR O */
+
+
+    //Side 1 - O O
+    if(c2 == 'O' && c3 == 'O' && c1 != 'X' && ch == 'O'){
+      	one.setColor( Color::Magenta );
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 2 O - O
+    if(c1 == 'O' && c3 == 'O' && c2 != 'X' && ch == 'O'){
+      	two.setColor( Color::Magenta );
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 3 O O -
+    if(c1 == 'O' && c2 == 'O' && c3 != 'X' && ch == 'O'){
+      	thr.setColor( Color::Magenta );
+      	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+
+    //Side 4 - O O
+    if(c5 == 'O' && c6 == 'O' && c4 != 'X' && ch == 'O'){
+    	four.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 5 O - O
+    if(c4 == 'O' && c6 == 'O' && c5 != 'X' && ch == 'O'){
+    	five.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 6 O O -
+    if(c4 == 'O' && c5 == 'O' && c6 != 'X' && ch == 'O'){
+    	six.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+    //Side 7 - O O
+    if(c8 == 'O' && c9 == 'O' && c7 != 'X' && ch == 'O'){
+    	sev.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 8 O - O
+    if(c7 == 'O' && c9 == 'O' && c8 != 'X' && ch == 'O'){
+    	eig.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Side 9 O O -
+    if(c7 == 'O' && c8 == 'O' && c9 != 'X' && ch == 'O'){
+    	nine.setColor( Color::Magenta );
+    	update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+
+    //Down1 U- IO IO
+    if(c4 == 'O' && c7 == 'O' && c1 != 'X' && ch == 'O'){
+        one.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down1 UO I- IO
+    if(c1 == 'O' && c7 == 'O' && c4 != 'X' && ch == 'O'){
+        four.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down1 U- IO IO
+    if(c1 == 'O' && c4 == 'O' && c7 != 'X' && ch == 'O'){
+        sev.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+
+    //Down2 U- IO IO
+    if(c5 == 'O' && c8 == 'O' && c2 != 'X' && ch == 'O'){
+        two.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down2 UO I- IO
+    if(c2 == 'O' && c8 == 'O' && c5 != 'X' && ch == 'O'){
+        five.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down2 UO IO I-
+    if(c2 == 'O' && c5 == 'O' && c8 != 'X' && ch == 'O'){
+        eig.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+    //Down3 U- IO IO
+    if(c6 == 'O' && c9 == 'O' && c3 != 'X' && ch == 'O'){
+        thr.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down3 UO I- IO
+    if(c3 == 'O' && c9 == 'O' && c6 != 'X' && ch == 'O'){
+        six.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Down3 UO IO I-
+    if(c3 == 'O' && c6 == 'O' && c9 != 'X' && ch == 'O'){
+        nine.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+
+
+    //Cross1 I- IO IO
+    if(c5 == 'O' && c9 == 'O' && c1 != 'X' && ch == 'O'){
+    	one.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Cross1 IO I- IO
+    if(c1 == 'O' && c9 == 'O' && c5 != 'X' && ch == 'O'){
+    	five.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Cross1 IO IO I-
+    if(c1 == 'O' && c5 == 'O' && c9 != 'X' && ch == 'O'){
+    	nine.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+
+    //Cross2 I- IO IO
+    if(c5 == 'O' && c7 == 'O' && c3 != 'X' && ch == 'O'){
+    	thr.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Cross2 IO I- IO
+    if(c3 == 'O' && c7 == 'O' && c5 != 'X' && ch == 'O'){
+    	five.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+    //Cross2 IO IO I-
+    if(c3 == 'O' && c5 == 'O' && c7 != 'X' && ch == 'O'){
+    	sev.setColor( Color::Magenta );
+        update(app,one,two,thr,four,five,six,sev,eig,nine);
+    }
+}
 int main(){
-	RenderWindow window(VideoMode(150,170),"SFML TicTacToe");
+	RenderWindow window(VideoMode(150,190),"SFML TicTacToe");
 
 	Font font;
 	font.loadFromFile("HelveticaNeueLight.ttf");
@@ -257,69 +544,71 @@ int main(){
 	one.setString("1");
 	one.setCharacterSize(50);
 	one.setColor(Color::Black);
-	one.move(10,10);
+	one.move(10,30);
 
 	Text two;
 	two.setFont(font);
 	two.setString("2");
 	two.setCharacterSize(50);
 	two.setColor(Color::Black);
-	two.move(60,10);
+	two.move(60,30);
 
 	Text thr;
 	thr.setFont(font);
 	thr.setString("3");
 	thr.setCharacterSize(50);
 	thr.setColor(Color::Black);
-	thr.move(110,10);
+	thr.move(110,30);
 
 	Text four;
 	four.setFont(font);
 	four.setString("4");
 	four.setCharacterSize(50);
 	four.setColor(Color::Black);
-	four.move(10,60);
+	four.move(10,80);
 
 	Text five;
 	five.setFont(font);
 	five.setString("5");
 	five.setCharacterSize(50);
 	five.setColor(Color::Black);
-	five.move(60,60);
+	five.move(60,80);
 
 	Text six;
 	six.setFont(font);
 	six.setString("6");
 	six.setCharacterSize(50);
 	six.setColor(Color::Black);
-	six.move(110,60);
+	six.move(110,80);
 
 	Text sev;
 	sev.setFont(font);
 	sev.setString("7");
 	sev.setCharacterSize(50);
 	sev.setColor(Color::Black);
-	sev.move(10,110);
+	sev.move(10,130);
 
 	Text eig;
 	eig.setFont(font);
 	eig.setString("8");
 	eig.setCharacterSize(50);
 	eig.setColor(Color::Black);
-	eig.move(60,110);
+	eig.move(60,130);
 
 	Text nine;
 	nine.setFont(font);
 	nine.setString("9");
 	nine.setCharacterSize(50);
 	nine.setColor(Color::Black);
-	nine.move(110,110);
+	nine.move(110,130);
 
-	Sprite background;
-	Texture backgroundTexture;
 
-	backgroundTexture.loadFromFile("background.png");
-	background.setTexture(backgroundTexture);
+	Text playing;
+	playing.setFont(font);
+	playing.setString("X Oynuyor");
+	playing.setCharacterSize(20);
+	playing.setColor(Color::Blue);
+	playing.move(15,10);
 
 	while(window.isOpen()){
 		Event event;
@@ -344,16 +633,20 @@ int main(){
 						if (ch == 'X')
 						{
 							ch = 'O';
+							changePlayer('O',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else if (ch == 'O')
 						{
 							ch = 'X';
+							changePlayer('X',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else{
 							cout << "Error!";
 						}
 
 						window.draw(one);
 						bool1 = false;
-            win(window,one,two,thr,four,five,six,sev,eig,nine);
+            			win(window,one,two,thr,four,five,six,sev,eig,nine);
 					}
 					if (static_cast<char>(event.text.unicode) == '2' && bool2 == true)
 					{
@@ -368,16 +661,20 @@ int main(){
 						if (ch == 'X')
 						{
 							ch = 'O';
+							changePlayer('O',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else if (ch == 'O')
 						{
 							ch = 'X';
+							changePlayer('X',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else{
 							cout << "Error!";
 						}
 
 						window.draw(two);
 						bool2 = false;
-            win(window,one,two,thr,four,five,six,sev,eig,nine);
+            			win(window,one,two,thr,four,five,six,sev,eig,nine);
 					}
 					if (static_cast<char>(event.text.unicode) == '3' && bool3 == true)
 					{
@@ -392,9 +689,13 @@ int main(){
             			if (ch == 'X')
 						{
 							ch = 'O';
+							changePlayer('O',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else if (ch == 'O')
 						{
 							ch = 'X';
+							changePlayer('X',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else{
 							cout << "Error!";
 						}
@@ -416,9 +717,13 @@ int main(){
 						if (ch == 'X')
 						{
 							ch = 'O';
+							changePlayer('O',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else if (ch == 'O')
 						{
 							ch = 'X';
+							changePlayer('X',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else{
 							cout << "Error!";
 						}
@@ -440,9 +745,13 @@ int main(){
 						if (ch == 'X')
 						{
 							ch = 'O';
+							changePlayer('O',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else if (ch == 'O')
 						{
 							ch = 'X';
+							changePlayer('X',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else{
 							cout << "Error!";
 						}
@@ -464,9 +773,13 @@ int main(){
 						if (ch == 'X')
 						{
 							ch = 'O';
+							changePlayer('O',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else if (ch == 'O')
 						{
 							ch = 'X';
+							changePlayer('X',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else{
 							cout << "Error!";
 						}
@@ -488,9 +801,13 @@ int main(){
 						if (ch == 'X')
 						{
 							ch = 'O';
+							changePlayer('O',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else if (ch == 'O')
 						{
 							ch = 'X';
+							changePlayer('X',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else{
 							cout << "Error!";
 						}
@@ -513,9 +830,13 @@ int main(){
 						if (ch == 'X')
 						{
 							ch = 'O';
+							changePlayer('O',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else if (ch == 'O')
 						{
 							ch = 'X';
+							changePlayer('X',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else{
 							cout << "Error!";
 						}
@@ -537,9 +858,13 @@ int main(){
 						if (ch == 'X')
 						{
 							ch = 'O';
+							changePlayer('O',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else if (ch == 'O')
 						{
 							ch = 'X';
+							changePlayer('X',playing);
+							resetColor(window,one,two,thr,four,five,six,sev,eig,nine);
 						}else{
 							cout << "Error!";
 						}
@@ -547,6 +872,10 @@ int main(){
 						window.draw(nine);
 						bool9 = false;
             			win(window,one,two,thr,four,five,six,sev,eig,nine);
+					}
+					if (static_cast<char>(event.text.unicode) == 't' || static_cast<char>(event.text.unicode) == 'T')
+					{
+						tips(window,one,two,thr,four,five,six,sev,eig,nine);
 					}
 					if (static_cast<char>(event.text.unicode) == 'q' || static_cast<char>(event.text.unicode) == 'Q')
 					{
@@ -585,10 +914,11 @@ int main(){
 
 						realWin = false;
 					}
+					
 
 		}
 		window.clear(Color::White);
-		window.draw(background);
+		window.draw(playing);
 		update(window,one,two,thr,four,five,six,sev,eig,nine);
 		window.display();
 	}
